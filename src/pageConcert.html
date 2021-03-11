@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>{{.Name}} Informations</title>
+    <!-- Bootstrap CSS -->
+ 
+    <link rel="stylesheet" href="static/style.css">
+     <link rel="stylesheet" href="https://unpkg.com/tailwindcss/dist/tailwind.min.css">
+
+</head>
+
+<style>
+   
+
+
+
+
+</style>
+
+<body>
+
+
+    
+    
+    <div>
+        <form class="form-inline" action="/Menu" method="POST">
+            <input type="submit" class="bg-transparent border-4 opacity-50 hover:bg-black hover:text-white text-center p-4 rounded-full text-black font-bold text-center" value="Back to Menu !">
+        </form>
+    </div>
+    
+   
+    
+    
+    <div class="max-w-4xl w-full   h-auto   mx-auto  my-32 lg:my-0 ">
+        <div class="  rounded-lg lg:rounded-l-lg lg:rounded-r-none shadow-2xl bg-white  mx-6 lg:mx-0">
+            <div class="h-15 w-15 px-auto flex items-center justify-center opacity-100 pt-10 ">
+                
+                <img src="{{.Image}}" class="rounded-full border border-gray-100 shadow-sm ">
+               
+                
+            </div>
+            <div class="p-4 md:p-12 text-center lg:text-left">
+            <div class="block lg:hidden rounded-full  border-black shadow-xl mx-auto -mt-16 h-48 w-48 bg-cover bg-center" ><img src="{{.Image}}" alt="{{.Name}}"></div>
+       
+            <div class="text-5xl font-bold pb-8 -0 text-center">{{.Name}}</div>
+            <div class="flex items-center justify-center">
+
+     <div class="flex space-x-10" >
+
+                
+                  <p class="pt-4 text-base font-bold flex items-center justify-center  ">Members: </p>
+                   
+                  <p class="pt-4 text-base font-bold flex items-center justify-center text-center text-gray-600 ">{{range .Members}}  {{.}}, {{end}}</p>
+
+            </div>
+
+            </div>
+       
+            <div class="flex justify-center items-center">
+
+<div class="flex space-x-10 text-center px-10"  >
+
+                
+                <p class="pt-4 text-base font-bold flex items-center justify-center text-center">Creation Date : </p>
+                 
+                <p class="pt-4 text-base font-bold flex items-center justify-center text-gray-600 ">{{.CreationDate}}</p>
+
+          </div>
+
+            </div>
+            <div class="flex justify-center items-center">
+   <div class="flex space-x-10" >
+
+                
+            <p class="pt-4 text-base font-bold flex items-center justify-center px-10">First Album </p>
+             
+            <p class="pt-4 text-base font-bold flex items-center justify-center text-gray-600 ">{{.FirstAlbum}}</p>
+
+      </div>
+
+            </div>
+            
+       
+            
+            <p class="pt-8 text-sm text-gray-600 px-10">{{range $key, $value := .DatesLocations}}
+				<div class="text-base font-bold uppercase text-center">
+					{{$key}}
+				</div>
+				{{range $value}}
+				<div class="text-center">📅   {{.}}</div>
+                <br> {{end}} {{end}}</p>
+            
+                <div></div>
+                    <iframe
+                         width="800"
+                         height="450"
+                         frameborder="0" style="border:0"
+                        src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCWTRGtmziDhE0b3M-D9VCsWP4ihSghnkE
+                                &q={{.Location}}" allowfullscreen>
+                    </iframe>
+                </div>
+
+
+
+
+
+
+
+
+
+        </div>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        </div>
+       
+        
+        
+        
+     
+     
+  
+    </div>
+  
+    
+
+</body>
+
+</html>
